@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 set -e
-npm build
+npm install
+npm run build
 cd dist
 echo 'casualconsulting.de' > CNAME
 git init
