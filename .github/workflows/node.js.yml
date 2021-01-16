@@ -21,8 +21,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      env:
-        access_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
     - run: | 
        git config --global user.name "$GITHUB_ACTOR"
        git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
@@ -33,5 +31,5 @@ jobs:
        git init
        git add -A
        git commit -m 'deploy'
-       git push -f https://${GITHUB_ACTOR}:$access_token@github.com/$GITHUB_REPOSITORY.git master:gh-pages
+       git push -f https://${GITHUB_ACTOR}:${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git master:gh-pages
        cd -
