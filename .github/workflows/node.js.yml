@@ -33,5 +33,5 @@ jobs:
        git init
        git add -A
        git commit -m 'deploy'
-       git push -f https://${GITHUB_ACTOR}:${GH_PERSONAL_ACCESS_TOKEN}@github.com/$GITHUB_REPOSITORY.git master:gh-pages
+       git push -f https://${GITHUB_ACTOR}:$access_token@github.com/$GITHUB_REPOSITORY.git master:gh-pages
        cd -
